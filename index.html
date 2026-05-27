@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora de Magnitudes Físicas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-content">
+      <div class="header-icon">⚛️</div>
+      <div>
+        <h1 class="main-title">Calculadora de Magnitudes Físicas</h1>
+        <p class="student-name">👤 Tu Nombre Completo Aquí</p>
+        <p class="subject-info">📚 Ingeniería de Software · Construcción de Algoritmos</p>
+      </div>
+    </div>
+    <div class="header-glow"></div>
+  </header>
+
+  <!-- TAB NAVIGATION -->
+  <nav class="tab-nav" id="tabNav">
+    <button class="tab-btn active" data-tab="velocidad">Velocidad</button>
+    <button class="tab-btn" data-tab="aceleracion">Aceleración</button>
+    <button class="tab-btn" data-tab="fuerza">Fuerza</button>
+    <button class="tab-btn" data-tab="trabajo">Trabajo</button>
+    <button class="tab-btn" data-tab="cinetica">E. Cinética</button>
+    <button class="tab-btn" data-tab="potencial">E. Potencial</button>
+    <button class="tab-btn" data-tab="densidad">Densidad</button>
+    <button class="tab-btn" data-tab="presion">Presión</button>
+    <button class="tab-btn" data-tab="carga">Carga Eléc.</button>
+    <button class="tab-btn" data-tab="ohm">Ley de Ohm</button>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- 1. VELOCIDAD -->
+    <section class="calc-section active" id="tab-velocidad">
+      <div class="calc-card">
+        <div class="card-header">
+          <span class="card-number">01</span>
+          <div>
+            <h2 class="card-title">Velocidad</h2>
+            <p class="card-formula">v = d / t</p>
+          </div>
+          <span class="card-emoji">🚀</span>
+        </div>
+        <div class="card-body">
+          <div class="input-group">
+            <label for="vel-d">Distancia (d)</label>
+            <div class="input-wrapper">
+              <input type="number" id="vel-d" placeholder="Ej: 100" step="any"/>
+              <span class="unit">m</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="vel-t">Tiempo (t)</label>
+            <div class="input-wrapper">
+              <input type="number" id="vel-t" placeholder="Ej: 10" step="any"/>
+              <span class="unit">s</span>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="calcularVelocidad()">
+            <span>Calcular</span>
+            <span class="btn-icon">⚡</span>
+          </button>
+          <div class="result-box" id="res-velocidad"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ACELERACIÓN -->
+    <section class="calc-section" id="tab-aceleracion">
+      <div class="calc-card">
+        <div class="card-header">
+          <span class="card-number">02</span>
+          <div>
+            <h2 class="card-title">Aceleración</h2>
+            <p class="card-formula">a = Δv / Δt</p>
+          </div>
+          <span class="card-emoji">🏎️</span>
+        </div>
+        <div class="card-body">
+          <div class="input-group">
+            <label for="acel-dv">Cambio de Velocidad (Δv)</label>
+            <div class="input-wrapper">
+              <input type="number" id="acel-dv" placeholder="Ej: 20" step="any"/>
+              <span class="unit">m/s</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="acel-dt">Cambio de Tiempo (Δt)</label>
+            <div class="input-wrapper">
+              <input type="number" id="acel-dt" placeholder="Ej: 5" step="any"/>
+              <span class="unit">s</span>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="calcularAceleracion()">
+            <span>Calcular</span>
+            <span class="btn-icon">⚡</span>
+          </button>
+          <div class="result-box" id="res-aceleracion"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FUERZA -->
+    <section class="calc-section" id="tab-fuerza">
+      <div class="calc-card">
+        <div class="card-header">
+          <span class="card-number">03</span>
+          <div>
+            <h2 class="card-title">Fuerza</h2>
+            <p class="card-formula">F = m · a</p>
+          </div>
+          <span class="card-emoji">💪</span>
+        </div>
+        <div class="card-body">
+          <div class="input-group">
+            <label for="fuerza-m">Masa (m)</label>
+            <div class="input-wrapper">
+              <input type="number" id="fuerza-m" placeholder="Ej: 70" step="any"/>
+              <span class="unit">kg</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="fuerza-a">Aceleración (a)</label>
+            <div class="input-wrapper">
+              <input type="number" id="fuerza-a" placeholder="Ej: 9.8" step="any"/>
+              <span class="unit">m/s²</span>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="calcularFuerza()">
+            <span>Calcular</span>
+            <span class="btn-icon">⚡</span>
+          </button>
+          <div class="result-box" id="res-fuerza"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. TRABAJO -->
+    <section class="calc-section" id="tab-trabajo">
+      <div class="calc-card">
+        <div class="card-header">
+          <span class="card-number">04</span>
+          <div>
+            <h2 class="card-title">Trabajo</h2>
+            <p class="card-formula">W = F · d · cos(θ)</p>
+          </div>
+          <span class="card-emoji">🔧</span>
+        </div>
+        <div class="card-body">
+          <div class="input-group">
+            <label for="trab-f">Fuerza (F)</label>
+            <div class="input-wrapper">
+              <input type="number" id="trab-f" placeholder="Ej: 50" step="any"/>
+              <span class="unit">N</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="trab-d">Distancia (d)</label>
+            <div class="input-wrapper">
+              <input type="number" id="trab-d" placeholder="Ej: 10" step="any"/>
+              <span class="unit">m</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="trab-ang">Ángulo (θ)</label>
+            <div class="input-wrapper">
+              <input type="number" id="trab-ang" placeholder="Ej: 0" step="any"/>
+              <span class="unit">°</span>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="calcularTrabajo()">
+            <span>Calcular</span>
+            <span class="btn-icon">⚡</span>
+          </button>
+          <div class="result-box" id="res-trabajo"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ENERGÍA CINÉTICA -->
+    <section class="calc-section" id="tab-cinetica">
+      <div class="calc-card">
+        <div class="card-header">
+          <span class="card-number">05</span>
+          <div>
+            <h2 class="card-title">Energía Cinética</h2>
+            <p class="card-formula">K = ½ · m · v²</p>
+          </div>
+          <span class="card-emoji">⚡</span>
+        </div>
+        <div class="card-body">
+          <div class="input-group">
+            <label for="cin-m">Masa (m)</label>
+            <div class="input-wrapper">
+              <input type="number" id="cin-m" placeholder="Ej: 10" step="any"/>
+              <span class="unit">kg</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="cin-v">Velocidad (v)</label>
+            <div class="input-wrapper">
+              <input type="number" id="cin-v" placeholder="Ej: 5" step="any"/>
+              <span class="unit">m/s</span>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="calcularCinetica()">
+            <span>Calcular</span>
+            <span class="btn-icon">⚡</span>
+          </button>
+          <div class="result-box" id="res-cinetica"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ENERGÍA POTENCIAL GRAVITATORIA -->
+    <section class="calc-section" id="tab-potencial">
+      <div class="calc-card">
+        <div class="card-header">
+          <span class="card-number">06</span>
+          <div>
+            <h2 class="card-title">Energía Potencial Gravitatoria</h2>
+            <p class="card-formula">U = m · g · h</p>
+          </div>
+          <span class="card-emoji">🌍</span>
+        </div>
+        <div class="card-body">
+          <div class="input-group">
+            <label for="pot-m">Masa (m)</label>
+            <div class="input-wrapper">
+              <input type="number" id="pot-m" placeholder="Ej: 5" step="any"/>
+              <span class="unit">kg</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="pot-g">Gravedad (g)</label>
+            <div class="input-wrapper">
+              <input type="number" id="pot-g" placeholder="9.8" step="any" value="9.8"/>
+              <span class="unit">m/s²</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="pot-h">Altura (h)</label>
+            <div class="input-wrapper">
+              <input type="number" id="pot-h" placeholder="Ej: 10" step="any"/>
+              <span class="unit">m</span>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="calcularPotencial()">
+            <span>Calcular</span>
+            <span class="btn-icon">⚡</span>
+          </button>
+          <div class="result-box" id="res-potencial"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. DENSIDAD -->
+    <section class="calc-section" id="tab-densidad">
+      <div class="calc-card">
+        <div class="card-header">
+          <span class="card-number">07</span>
+          <div>
+            <h2 class="card-title">Densidad</h2>
+            <p class="card-formula">ρ = m / V</p>
+          </div>
+          <span class="card-emoji">🧊</span>
+        </div>
+        <div class="card-body">
+          <div class="input-group">
+            <label for="dens-m">Masa (m)</label>
+            <div class="input-wrapper">
+              <input type="number" id="dens-m" placeholder="Ej: 200" step="any"/>
+              <span class="unit">kg</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="dens-v">Volumen (V)</label>
+            <div class="input-wrapper">
+              <input type="number" id="dens-v" placeholder="Ej: 2" step="any"/>
+              <span class="unit">m³</span>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="calcularDensidad()">
+            <span>Calcular</span>
+            <span class="btn-icon">⚡</span>
+          </button>
+          <div class="result-box" id="res-densidad"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PRESIÓN -->
+    <section class="calc-section" id="tab-presion">
+      <div class="calc-card">
+        <div class="card-header">
+          <span class="card-number">08</span>
+          <div>
+            <h2 class="card-title">Presión</h2>
+            <p class="card-formula">P = F / A</p>
+          </div>
+          <span class="card-emoji">🌡️</span>
+        </div>
+        <div class="card-body">
+          <div class="input-group">
+            <label for="pres-f">Fuerza (F)</label>
+            <div class="input-wrapper">
+              <input type="number" id="pres-f" placeholder="Ej: 100" step="any"/>
+              <span class="unit">N</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="pres-a">Área (A)</label>
+            <div class="input-wrapper">
+              <input type="number" id="pres-a" placeholder="Ej: 2" step="any"/>
+              <span class="unit">m²</span>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="calcularPresion()">
+            <span>Calcular</span>
+            <span class="btn-icon">⚡</span>
+          </button>
+          <div class="result-box" id="res-presion"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CARGA ELÉCTRICA -->
+    <section class="calc-section" id="tab-carga">
+      <div class="calc-card">
+        <div class="card-header">
+          <span class="card-number">09</span>
+          <div>
+            <h2 class="card-title">Carga Eléctrica</h2>
+            <p class="card-formula">q = I · t</p>
+          </div>
+          <span class="card-emoji">⚡</span>
+        </div>
+        <div class="card-body">
+          <div class="input-group">
+            <label for="carg-i">Corriente (I)</label>
+            <div class="input-wrapper">
+              <input type="number" id="carg-i" placeholder="Ej: 3" step="any"/>
+              <span class="unit">A</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="carg-t">Tiempo (t)</label>
+            <div class="input-wrapper">
+              <input type="number" id="carg-t" placeholder="Ej: 10" step="any"/>
+              <span class="unit">s</span>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="calcularCarga()">
+            <span>Calcular</span>
+            <span class="btn-icon">⚡</span>
+          </button>
+          <div class="result-box" id="res-carga"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. LEY DE OHM -->
+    <section class="calc-section" id="tab-ohm">
+      <div class="calc-card">
+        <div class="card-header">
+          <span class="card-number">10</span>
+          <div>
+            <h2 class="card-title">Ley de Ohm</h2>
+            <p class="card-formula">V = I · R</p>
+          </div>
+          <span class="card-emoji">🔌</span>
+        </div>
+        <div class="card-body">
+          <div class="input-group">
+            <label for="ohm-i">Corriente (I)</label>
+            <div class="input-wrapper">
+              <input type="number" id="ohm-i" placeholder="Ej: 2" step="any"/>
+              <span class="unit">A</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="ohm-r">Resistencia (R)</label>
+            <div class="input-wrapper">
+              <input type="number" id="ohm-r" placeholder="Ej: 5" step="any"/>
+              <span class="unit">Ω</span>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="calcularOhm()">
+            <span>Calcular</span>
+            <span class="btn-icon">⚡</span>
+          </button>
+          <div class="result-box" id="res-ohm"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <p>⚛️ Calculadora de Magnitudes Físicas · Ingeniería de Software · Construcción de Algoritmos</p>
+  </footer>
+
+  <!-- Particles background -->
+  <div class="particles" id="particles"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
