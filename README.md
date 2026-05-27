@@ -4,7 +4,7 @@
 
 ## 👤 Nombre Completo
 
-**Tu Nombre Completo Aquí**
+Nicol Marcela Pacheco Ortega
 
 ---
 
