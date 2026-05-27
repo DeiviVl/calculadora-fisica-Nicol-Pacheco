@@ -44,38 +44,7 @@ La aplicación web permite realizar **10 operaciones físicas fundamentales** co
 
 ### Método 1 — Abrir directo en el navegador (sin servidor)
 
-1. Descarga o clona este repositorio:
-   ```bash
-   git clone https://github.com/tu-usuario/calculadora-fisica-nombre-apellido.git
-   ```
-
-2. Entra a la carpeta del proyecto:
-   ```bash
-   cd calculadora-fisica-nombre-apellido
-   ```
-
-3. Abre el archivo `index.html` en tu navegador favorito:
-   - **Windows:** Doble clic en `index.html`
-   - **macOS:** `open index.html`
-   - **Linux:** `xdg-open index.html`
-
-### Método 2 — Con servidor local (recomendado para desarrollo)
-
-Si tienes **VS Code**, instala la extensión **Live Server**:
-1. Abre la carpeta del proyecto en VS Code
-2. Clic derecho en `index.html` → **"Open with Live Server"**
-
-O con Python:
-```bash
-# Python 3
-python -m http.server 8080
-
-# Python 2
-python -m SimpleHTTPServer 8080
-```
-Luego abre: `http://localhost:8080`
-
----
+Copie este link y péguelo en su navegador de confianza: https://deivivl.github.io/calculadora-fisica-Nicol-Pacheco/
 
 ## 📁 Estructura del Proyecto
 
@@ -105,8 +74,8 @@ calculadora-fisica-nombre-apellido/
 | Programa | Ingeniería de Software |
 | Materia | Construcción de Algoritmos |
 | Actividad | Evaluativa #3 |
-| Fecha límite | Jueves 22 de mayo, 22:00 hrs |
+| Fecha límite |---- |
 
 ---
 
-*Desarrollado con 💜 para la materia Construcción de Algoritmos*
+
